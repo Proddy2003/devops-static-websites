@@ -2,7 +2,7 @@ name: CI Docker Build
 
 on:
   push:
-    branches: [ "main" ]   # déclenche le workflow sur chaque push dans main
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -22,5 +22,6 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
+        file: ./Dockerfile   # <-- ajoute cette ligne
         push: true
         tags: proddy2004/devops-static-websites:latest
